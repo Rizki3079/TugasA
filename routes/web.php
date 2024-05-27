@@ -26,9 +26,9 @@ Route::get('/template', function () {
 });
 
 //auth
-// Route::get('/', function () {
-//     return view('landingpage');
-// });
+Route::get('/landing', function () {
+    return view('landingpage');
+});
 
 //auth
 // Route::get('/login', function () {
