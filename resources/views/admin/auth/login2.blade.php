@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="css/auth/loginAdmin.css">
   <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
@@ -16,7 +17,8 @@
         <div class="row align-items-center">
             <div class="col">
                 <div class="form-box " 
-                {{-- style="margin-top: 10%;margin-left:15%;margin-right:15%" --}}>
+                {{-- style="margin-top: 10%;margin-left:15%;margin-right:15%" --}}
+                data-aos="fade-up">
                     <div class="form-value">
                         @if(session('error'))
             <div class="alert alert-danger">
@@ -41,9 +43,9 @@
                             
                             </div>
                             <button type="submit" >Masuk</button>
-                            <div class="register">
+                            {{-- <div class="register">
                                 <p>Belum Mempunyai Akun? <a href="/registrasi">Daftar</a></p>
-                            </div>
+                            </div> --}}
                         </form>
                     </div>
                 </div>
@@ -55,7 +57,10 @@
     </div>
     
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

@@ -24,6 +24,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Balongan Indah 2</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -33,21 +34,42 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/landingPage/landing.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <style>
+            .card-custom {
+              border-radius: 10px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            .card-header-custom {
+              background-color: #f9c74f;
+              color: white;
+              font-weight: bold;
+            }
+            .card-body-custom {
+              background-color: #fff3cd;
+            }
+            .card-footer-custom {
+              background-color: #f9c74f;
+              color: white;
+              text-align: center;
+            }
+          </style>
+
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: rgba(0, 0, 0, 0.742)">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: rgba(0, 0, 0, 0.87)">
             <div class="container">
-                <a class="" href="#page-top"><img src="admin/dist/img/logoBali2.png" alt="logo" style="width: 15%"></a>
+                <a class="" href="#page-top"><img src="admin/dist/img/logoBali2.png" alt="logo" style="width: 13%"></a>
                 {{-- <a class="navbar-brand" href="#page-top"><img src="admin/dist/img/logoBali2.png" alt="logo"></a> --}}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <ul class="navbar-nav  ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#services">Informasi Tiket</a></li>
+                        {{-- <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li> --}}
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -58,7 +80,7 @@
         </nav>
         <!-- Masthead-->
         <header class="masthead" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('admin/dist/img/auth/backgroundLogin.jpg')">
-            <div class="container">
+            <div class="container" data-aos="fade-up">
                 <div class="masthead-subheading">Welcome To</div>
                 <div class="masthead-heading text-uppercase">Pantai Balongan Indah</div>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
@@ -68,39 +90,55 @@
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Services</h2>
+                    <h2 class="section-heading text-uppercase">Informasi Tiket</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <div class="row text-center">
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">E-Commerce</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <div class="col-md-6 mb-6">
+                        <div class="card card-custom">
+                            <div class="card-header card-header-custom">
+                              Harga Tiket Hari Biasa
+                            </div>
+                            <div class="card-body card-body-custom">
+                              <p><strong>Anak-anak:</strong> Rp 30.000</p>
+                              <p><strong>Dewasa:</strong> Rp 50.000</p>
+                            </div>
+                            <div class="card-footer card-footer-custom">
+                              Senin - Jumat
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-6">
+                            <div class="card card-custom">
+                                <div class="card-header card-header-custom">
+                                  Harga Tiket Weekend
+                                </div>
+                                <div class="card-body card-body-custom">
+                                  <p><strong>Anak-anak:</strong> Rp 40.000</p>
+                                  <p><strong>Dewasa:</strong> Rp 70.000</p>
+                                </div>
+                                <div class="card-footer card-footer-custom">
+                                  Sabtu - Minggu
+                                </div>
+                              </div>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Responsive Design</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
+                    
+                </div>
+                </div>
+                    {{-- <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Web Security</h4>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
         <!-- Portfolio Grid-->
-        <section class="page-section bg-light" id="portfolio">
+        {{-- <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Portfolio</h2>
@@ -199,9 +237,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- About-->
-        <section class="page-section" id="about">
+        {{-- <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">About</h2>
@@ -261,9 +299,9 @@
                     </li>
                 </ul>
             </div>
-        </section>
+        </section> --}}
         <!-- Team-->
-        <section class="page-section bg-light" id="team">
+        {{-- <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
@@ -305,9 +343,9 @@
                     <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- Clients-->
-        <div class="py-5">
+        {{-- <div class="py-5">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-3 col-sm-6 my-3">
@@ -324,9 +362,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Contact-->
-        <section class="page-section" id="contact">
+        {{-- <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Contact Us</h2>
@@ -388,9 +426,9 @@
                     <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
                 </form>
             </div>
-        </section>
+        </section> --}}
         <!-- Footer-->
-        <footer class="footer py-4">
+        {{-- <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
@@ -405,7 +443,7 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> --}}
         <!-- Portfolio Modals-->
         <!-- Portfolio item 1 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -626,6 +664,13 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> --}}
+    <script>
+        AOS.init();
+    </script>
     </body>
 </html>
 
