@@ -52,7 +52,10 @@ Route::middleware('auth:admin,superAdmin')->group(function () {
     Route::get('/dashboard/profile', [ProfileController::class, 'index'])->name('profile');
 
     Route::get('pelanggan/datatable', [CustomerController::class, 'datatable'])->name('pelanggan.datatable');
-    Route::resource('pelanggan', CustomerController::class);
+    Route::get('/pelanggan', [CustomerController::class, 'index'])->name('pelanggan.index');
+    Route::post('/pelanggan/{id}', [CustomerController::class, 'edit'])->name('pelanggan.edit');
+    Route::delete('/pelanggan/{id}', [CustomerController::class, 'destroy'])->name('pelanggan.destroy');
+    // Route::resource('pelanggan', CustomerController::class);
 });
 
 

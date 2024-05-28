@@ -1,6 +1,7 @@
 @extends('layouts.dashboardAdmin')
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 @section('content')
 
@@ -119,10 +120,12 @@
                 let btn = `
                     <div class="btn-list">
                         <a href="{{ route('pelanggan.edit', ':id') }}" class="btn btn-md btn-warning"><i class="fa fa-edit"></i></a>
-                        <a href="javascript:void(0)" onclick="confirmDelete('{{ route('pelanggan.destroy', ':id') }}')" class="btn btn-md btn-danger btn-delete"><i class="fa fa-trash"></i></a>
+                        <a href="#" onclick="destroy('${data}')" class="btn btn-md btn-danger btn-delete"><i class="fa fa-trash"></i></a>
+                    </div>
                 `;
 
                 btn = btn.replaceAll(':id', data);
+
                 return btn;
             },
         }, ],
@@ -141,6 +144,36 @@
           }
       });
   })
+
+  function destroy(id) {
+    var url = "{{ route('pelanggan.destroy', ':id') }}".replace(':id', id);
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    if (confirm('Apakah Anda yakin ingin menghapus pelanggan ini?')) {
+        $.ajax({
+            url: url,
+            type: 'DELETE',
+            data: { "id": id },
+            dataType: "JSON",
+            headers: {
+                'X-CSRF-TOKEN': csrfToken
+            },
+            success: function(data) {
+                // Reload the table
+                alert('Berhasil Menghapus pelanggan.');
+
+                table.ajax.reload();
+            },
+            error: function(xhr, status, error) {
+                // Handle error response
+                console.error(xhr.responseText);
+                alert('Terjadi kesalahan saat menghapus pelanggan.');
+            }
+        });
+    }
+}
+
+
 </script>
 
 @endsection

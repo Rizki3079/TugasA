@@ -60,18 +60,17 @@ class CustomerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(string $id)
     {
-        $pelanggan = UserData::find($id);
+        try {    
 
-        dd($pelanggan);
-        if (!$pelanggan) {
-            return redirect()->route('pelanggan.index')->with('error', 'Data tidak ditemukan.');
+            UserData::find($id)->delete();
+
+        } catch (\Exception $e) {
+            return response()->json(['status' => false, 'message' => $e->getMessage(),]);
         }
-
-        $pelanggan->delete();
-
-        return redirect()->route('pelanggan.index')->with('success', 'Data berhasil dihapus.');
+    
+        return response()->json(['status' => true, 'message' => 'Berhasil menghapus pelanggan!',]);
     }
 
     public function datatable(Request $request)
